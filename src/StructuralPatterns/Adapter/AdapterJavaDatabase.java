@@ -1,23 +1,24 @@
 package StructuralPatterns.Adapter;
 
-public class AdapterJavaDatabase extends JavaApp implements Database {
+public class AdapterJavaDatabase implements Database {
+    private JavaApp javaApp;
     @Override
     public void insert() {
-        saveObject();
+        javaApp.saveObject();
     }
 
     @Override
     public void select() {
-        loadObject();
+        javaApp.loadObject();
     }
 
     @Override
     public void update() {
-        updateObject();
+        javaApp.updateObject();
     }
 
     @Override
     public void delete() {
-        removeObject();
+        javaApp.removeObject();
     }
 }
